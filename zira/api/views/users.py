@@ -5,7 +5,7 @@ from pymessagebus import CommandBus
 from zira.containers import Container
 
 router = APIRouter(
-    prefix='users',
+    prefix='/users',
     tags=['users']
 )
 
@@ -14,5 +14,5 @@ router = APIRouter(
 @inject
 async def users(
     command_bus: CommandBus = Provide[Container.command_bus]
-):
+) -> dict:
     return {'message': 'Empty'}

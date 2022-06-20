@@ -1,4 +1,7 @@
-from zira.tests.factory import Factory
+from zira.api.app import create_app
+from zira.containers import Container
 
-if __name__ == '__main__':
-    pass
+
+container = Container()
+container.wire(modules=['zira.api.views'])
+app = create_app()
