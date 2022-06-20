@@ -40,7 +40,7 @@ class TestPeriodExamples(TestCase):
                             year=daily_date.year,
                             month=daily_date.month,
                             day=daily_date.day,
-                            hour=datetime.now().hour - x,
+                            hour=datetime.now().hour + x,
                             minute=datetime.now().minute,
                             second=datetime.now().second
                         ),

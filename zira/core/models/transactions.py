@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from datetime import date, datetime
 from typing import List
 from uuid import UUID
@@ -12,6 +13,7 @@ class Transaction:
         return round(float(number), 2)
 
 
+@dataclass
 class Spending(Transaction):
 
     id: UUID
@@ -20,6 +22,7 @@ class Spending(Transaction):
     daily_id: UUID
 
 
+@dataclass
 class Daily(Transaction):
 
     id: UUID
@@ -35,6 +38,7 @@ class Daily(Transaction):
         return amount
 
 
+@dataclass
 class Period(Transaction):
 
     id: UUID
