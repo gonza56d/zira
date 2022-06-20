@@ -43,7 +43,8 @@ class Factory:
                 'budget',
                 float(f'{randint(10000, 100000)}.{randint(0, 99)}')
             ),
-            dailies=kwargs.get('dailies', dailies)
+            dailies=kwargs.get('dailies', dailies),
+            user_id=kwargs.get('user_id', uuid4())
         )
 
     @staticmethod

@@ -46,6 +46,7 @@ class Period(Transaction):
     date_to: date
     budget: Decimal
     dailies: List[Daily]
+    user_id: UUID
 
     @property
     def current_balance(self) -> Decimal:
