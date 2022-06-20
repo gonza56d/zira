@@ -1,8 +1,8 @@
-from dataclasses import dataclass
 from uuid import UUID
 
+from pydantic import BaseModel
 
-@dataclass
-class GetUser:
+
+class GetUser(BaseModel):
 
     user_id: UUID
