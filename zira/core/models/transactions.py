@@ -2,8 +2,6 @@ from datetime import date, datetime
 from typing import List
 from uuid import UUID
 
-from pydantic import BaseModel
-
 from zira.core.models.currency import Decimal
 
 
@@ -14,7 +12,7 @@ class Transaction:
         return round(float(number), 2)
 
 
-class Spending(BaseModel, Transaction):
+class Spending(Transaction):
 
     id: UUID
     time: datetime
@@ -22,7 +20,7 @@ class Spending(BaseModel, Transaction):
     daily_id: UUID
 
 
-class Daily(BaseModel, Transaction):
+class Daily(Transaction):
 
     id: UUID
     date: date
@@ -37,7 +35,7 @@ class Daily(BaseModel, Transaction):
         return amount
 
 
-class Period(BaseModel, Transaction):
+class Period(Transaction):
 
     id: UUID
     date_from: date
