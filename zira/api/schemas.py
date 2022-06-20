@@ -4,6 +4,8 @@ from uuid import UUID
 
 from pydantic import BaseModel
 
+from zira.core.models import Period
+
 
 class SpendingSchema(BaseModel):
 
@@ -36,3 +38,9 @@ class PeriodSchema(BaseModel):
     days_left: int
     current_days: int
     active: bool
+
+    @staticmethod
+    def dump(period: Period):
+        return PeriodSchema(
+
+        )
