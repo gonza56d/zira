@@ -5,7 +5,7 @@ from uuid import UUID
 from pydantic import BaseModel
 
 
-class Spending(BaseModel):
+class SpendingSchema(BaseModel):
 
     id: UUID
     time: datetime
@@ -13,22 +13,22 @@ class Spending(BaseModel):
     daily_id: UUID
 
 
-class Daily(BaseModel):
+class DailySchema(BaseModel):
 
     id: UUID
     date: date
     period_id: UUID
-    spendings: List[Spending]
+    spendings: List[SpendingSchema]
     spendings_amount: float
 
 
-class Period(BaseModel):
+class PeriodSchema(BaseModel):
 
     id: UUID
     date_from: date
     date_to: date
     budget: float
-    dailies: List[Daily]
+    dailies: List[DailySchema]
     current_balance: float
     dailies_spendings_amount: float
     max_daily_spend: float
